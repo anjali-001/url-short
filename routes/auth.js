@@ -26,17 +26,17 @@ router.post('/signup', (req,res)=>{
 })
 router.post('/signin',(req,res)=>{
     User.findOne({email:req.body.email},async (err,doc)=>{
-        //console.log('doc', doc._id)
+        console.log('doc', doc)
         if(!doc){
-            return res.send('Email not registered!');
+            return res.send({error:'Email not registered!',user:null,token:null});//{user,error}
         }
         const checkPassword = await bcrypt.compare(req.body.password,doc.password)
         if(!checkPassword){
-            return res.send('Password is incorrect');
+            return res.send({error:'Password is incorrect!',user:null,token:null});
         }
         //token
         const token = jwt.sign({_id: doc._id}, process.env.TOKEN_SECRET)
-        res.header('auth-token',token).send('Login Successful:' + token)
+        res.header('auth-token',token).send({error:null,user:doc,token:token})//user data error null
     })
 })
 
