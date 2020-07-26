@@ -17,7 +17,7 @@ router.post('/', verify ,(req,res)=>{
         }
         URL.findOne({url:req.body.url,userid:req.user._id},(err,doc)=>{
             if(doc){
-                return res.send('Url is already present '+doc._id)
+                return res.send({message:'Url is already present', url:doc})
             }
             else{
         const url = new URL({
