@@ -6,7 +6,7 @@ const jwt = require('jsonwebtoken');
 router.post('/signup', (req,res)=>{
     User.findOne({email:req.body.email},async(error,doc)=>{
         if(doc)
-        return res.send('Email already exists');
+        return res.send({error:'Email already exists! Signin instead.',user:null,token:null});
 
         //Hash Passwords
         const salt = await bcrypt.genSalt(10)
@@ -18,9 +18,11 @@ router.post('/signup', (req,res)=>{
         })
         user.save()
         .then((resp)=>{
+            const token = jwt.sign({_id: resp._id}, process.env.TOKEN_SECRET)
             console.log(resp);
+            res.send({user:resp,token:token,error:null})
         }).catch((err)=>res.status(400).send(err))
-        res.send(user);
+        
     })
     
 })
@@ -28,7 +30,7 @@ router.post('/signin',(req,res)=>{
     User.findOne({email:req.body.email},async (err,doc)=>{
         console.log('doc', doc)
         if(!doc){
-            return res.send({error:'Email not registered!',user:null,token:null});//{user,error}
+            return res.send({error:'Email not registered! Signup first',user:null,token:null});//{user,error}
         }
         const checkPassword = await bcrypt.compare(req.body.password,doc.password)
         if(!checkPassword){
