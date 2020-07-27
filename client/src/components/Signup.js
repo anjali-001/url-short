@@ -42,35 +42,36 @@ class Signup extends Component {
 
     render(){
         return (
-            <div className="container form-group">
-                <h2 className="col-md-4 col-sm-6">Sign Up</h2>
-                <form className="col-md-4 col-sm-7" onSubmit={this.handleSubmit}>
+            <div className="App-header text-center">
+                <h2>Sign Up</h2>
+                <form onSubmit={this.handleSubmit}>
+                    <div className="text-left">
                         <label><b>Name:</b>
                         <input name="name" 
                         type="text" 
                         value={this.state.name} 
                         placeholder="Name" 
                         required onChange={this.handleChange} 
-                        className="pr-5 form-control"/>
-                        </label>
+                        className="form-control"/>
+                        </label><br/>
                         <label><b>Email:</b>
                         <input name="email" 
                         type="text" 
                         value={this.state.email} 
                         placeholder="Email" 
                         required onChange={this.handleChange} 
-                        className="pr-5 form-control"/>
-                        </label>
+                        className="form-control"/>
+                        </label><br/>
                         <label><b>Password:</b>
                         <input name="password" 
                         type="password" 
                         value={this.state.password} 
                         placeholder="Password" 
                         required onChange={this.handleChange} 
-                        className="pr-5 form-control"/>
-                        </label>
+                        className="form-control"/>
+                        </label><br/></div>
                         <button type="submit" 
-                        className="btn btn-light btn-outline-secondary col-md-9">Sign Up</button>
+                        className="btn btn-light btn-outline-secondary text-center">Sign Up</button>
                         <p className="text-danger pt-2 font-italic">{this.state.error}</p>
                 </form>
                      

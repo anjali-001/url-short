@@ -3,6 +3,7 @@ import {Link} from 'react-router-dom';
 import {removeUserSession} from '../utils/common';
 import axios from 'axios';
 import {getToken } from '../utils/common'
+import Navbar from './Navbar'
 
 class Home extends Component {
     constructor(props){
@@ -15,10 +16,10 @@ class Home extends Component {
         })
     }
 
-    handleSignout = () => {
-        removeUserSession();
-        this.props.history.push('/signin')
-    }
+    // handleSignout = () => {
+    //     removeUserSession();
+    //     this.props.history.push('/signin')
+    // }
 
     handleChange = (e) => {
         this.setState({
@@ -61,39 +62,43 @@ class Home extends Component {
         )
         return (
             <div>
-                <nav className="navbar navbar-dark bg-dark">
+                {/* <nav className="navbar navbar-dark bg-dark">
                    <h3 className="text-light">URL Shortener</h3>
                     <button className="btn btn-light btn-outline-secondary" onClick={this.handleSignout}>Sign Out</button>
-               </nav>
-               <div className="container form-group">
-                <h2 className="col-md-4">Shorten URL</h2>
+                    <Link to="/list" ><button className="btn btn-light btn-outline-secondary">list</button></Link>
+
+               </nav> */}
+               <Navbar />
+               <div className="container form-style">
+                <h2 className="col-md-4 p-3 text-center">Shorten URL</h2>
                 <form className="" onSubmit={this.handleSubmit}>
                         <div className="form-inline">
-                        <label><b>URL :</b></label>
+                        {/* <label><b>Enter Url :</b></label> */}
                         <input name="url" 
                                type="text" 
                                value={this.state.url}
-                               placeholder="Enter URL" 
+                               placeholder="URL to be shortened" 
                                required onChange={this.handleChange}
-                               className="form-control"/>
-                        </div>
+                               className="form-control text-center"/>
+                        </div><br/>
                         <div className="form-inline">
-                        <label><b>Preferred Hash* :</b></label>
+                        {/* <label><b>Preferred Hash* </b></label> */}
                         <input name="hash" 
                                type="hash" 
                                value={this.state.hash}
-                               placeholder="Preferred hash" 
+                               placeholder="Preferred hash*" 
                                onChange={this.handleChange}
-                               className="form-control"/>
+                               className="form-control text-center"/>
                         </div>
                         <br/>
                         <button type="submit" 
-                                className="btn btn-outline-primary ">Shorten</button>
+                                className="btn btn-outline-dark col-6 ml-5">Shorten</button>
                         {/* <p className="text-danger pt-2 font-italic">{this.state.error}</p> */}
                       
                 </form>
-        <p className="text-success">{this.state.message}</p>
-        <a href={this.state.link} target="_blank">{this.state.link}</a>
+                <br/>
+        <p className="text-dark font-weight-bold mb-2">{this.state.message}</p>
+        <a href={this.state.link} target="_blank" className="text-light bg-dark">{this.state.link}</a>
                 </div>
             </div>
         )

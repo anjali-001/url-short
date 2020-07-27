@@ -10,8 +10,9 @@ function Landing() {
            <nav className="navbar navbar-dark bg-dark">
                <h3 className="text-light">URL Shortener</h3>
                {/* <p>Already registered? Sign in here</p> */}
-                <Link to="/signin"><button className="btn btn-light btn-outline-secondary">Signin</button></Link>
+                <Link to="/signin"><a className="text-light font-weight-bold" href="#">Sign In</a></Link>
            </nav>
+           
             <Signup/>
             
         </div>

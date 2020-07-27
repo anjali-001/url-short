@@ -44,11 +44,12 @@ router.get('/list', verify, (req,res)=>{
     URL.find({userid:req.user._id},(err,doc)=>{
     const arr=[];
         if(doc){
-            doc.forEach(item=>arr.push(item._id))
+            doc.forEach(item=>arr.push({url:item.url,hash:item.hash,id:item._id}))
             res.send(arr)
         }
     })
 })
+
 
 router.delete('/delete',verify,(req,res)=>{
     URL.findByIdAndRemove({_id:req.body._id})
