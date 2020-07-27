@@ -61,21 +61,22 @@ class Home extends Component {
             </div>
         )
         return (
-            <div>
+            <>
+            <Navbar />
+            <div className="App-header text-center">
                 {/* <nav className="navbar navbar-dark bg-dark">
                    <h3 className="text-light">URL Shortener</h3>
                     <button className="btn btn-light btn-outline-secondary" onClick={this.handleSignout}>Sign Out</button>
                     <Link to="/list" ><button className="btn btn-light btn-outline-secondary">list</button></Link>
 
                </nav> */}
-               <Navbar />
-               <div className="container form-style">
-                <h2 className="col-md-4 p-3 text-center">Shorten URL</h2>
+               
+                <h2 className=" p-3 text-center">Shorten URL</h2>
                 <form className="" onSubmit={this.handleSubmit}>
                         <div className="form-inline">
                         {/* <label><b>Enter Url :</b></label> */}
                         <input name="url" 
-                               type="text" 
+                               type="url" 
                                value={this.state.url}
                                placeholder="URL to be shortened" 
                                required onChange={this.handleChange}
@@ -92,15 +93,17 @@ class Home extends Component {
                         </div>
                         <br/>
                         <button type="submit" 
-                                className="btn btn-outline-dark col-6 ml-5">Shorten</button>
+                                className="btn btn-outline-dark">Shorten</button>
                         {/* <p className="text-danger pt-2 font-italic">{this.state.error}</p> */}
                       
                 </form>
                 <br/>
-        <p className="text-dark font-weight-bold mb-2">{this.state.message}</p>
-        <a href={this.state.link} target="_blank" className="text-light bg-dark">{this.state.link}</a>
+        <p className="text-danger font-weight-bold mb-2">{this.state.message}</p>
+        
+        <p> <span><a href={this.state.link} target="_blank" className="text-light nav-background">{this.state.link}</a></span></p>
                 </div>
-            </div>
+                </>
+
         )
     }
     

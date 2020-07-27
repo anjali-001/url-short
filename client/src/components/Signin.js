@@ -49,7 +49,7 @@ class Signin extends Component {
   render() {
     return (
       <React.Fragment>
-        <nav className="navbar navbar-dark bg-dark">
+        <nav className="navbar navbar-dark nav-background">
           <h3 className="text-light">URL Shortener</h3>
           {/* <p>Not registered? Sign up here</p> */}
           <Link to="/">
@@ -67,7 +67,7 @@ class Signin extends Component {
               <b>Email:</b>
               <input
                 name="email"
-                type="text"
+                type="email"
                 value={this.state.email}
                 placeholder="Email"
                 required

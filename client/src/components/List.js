@@ -28,12 +28,17 @@ export class List extends Component {
     return (
       <React.Fragment>
         <Navbar />
-        <div className="container p-3">
-          <ul className="list-group">
+        <div className=" App-header p-3">
+        <table class="table App-header">
+
+  <tbody>
+          {/* <ul className="list-group"> */}
             {this.state.list.map((item) => {
               return <ListItem key={item.id} url={item.url} hash={item.hash} />;
             })}
-          </ul>{" "}
+          {/* </ul>{" "} */}
+        </tbody>
+          </table>
         </div>
       </React.Fragment>
     );

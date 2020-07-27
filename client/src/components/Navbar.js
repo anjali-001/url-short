@@ -5,8 +5,8 @@ import {removeUserSession} from '../utils/common'
 function Navbar(props) {
   return (
     <div>
-      <nav className="navbar navbar-expand-lg navbar-light bg-dark">
-        <a className="navbar-brand text-light" href="#">
+      <nav className="navbar navbar-expand-lg navbar-light nav-background">
+        <a className="navbar-brand text-light">
           URL Shortener
         </a>
         <button
