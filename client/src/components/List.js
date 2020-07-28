@@ -14,7 +14,7 @@ export class List extends Component {
   }
   componentDidMount() {
     axios
-      .get("http://localhost:5000/api/shorten/list", {
+      .get("/api/shorten/list", {
         headers: { "auth-token": getToken() },
       })
       .then((res) => {

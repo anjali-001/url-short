@@ -21,7 +21,7 @@ class Signup extends Component {
     }
     handleSubmit = (e) => {
         e.preventDefault();
-        axios.post("http://localhost:5000/api/user/signup",{
+        axios.post("/api/user/signup",{
             name:this.state.name,
             email:this.state.email,
             password:this.state.password

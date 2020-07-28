@@ -29,7 +29,7 @@ class Home extends Component {
 
     handleSubmit = (e) => {
         e.preventDefault();
-        axios.post("http://localhost:5000/api/shorten",{
+        axios.post("/api/shorten",{
             url:this.state.url,
             hash:this.state.hash
         },{headers:{'auth-token':getToken()}})

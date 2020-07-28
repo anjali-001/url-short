@@ -3,6 +3,7 @@ const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
 const dotenv = require('dotenv');
 const cors = require('cors');
+const path = require('path');
 const URL = require('./models/Url');
 //AuthRoutes
 const authRoute = require('./routes/auth');
@@ -18,7 +19,7 @@ app.use(cors());
 
 //connect to DB
 dotenv.config();
-mongoose.connect(process.env.DB_CONNECT)
+mongoose.connect(process.env.MONGO_URI || process.env.DB_CONNECT)
 .then(()=>console.log('Mongodb connected'))
 .catch(err=>console.log('Error:', err))
 //Middleware
@@ -43,7 +44,16 @@ app.get('/:hash',(req,res)=>{
     })
 })
 
+if(process.env.NODE_ENV === 'production'){
+    app.use(express.static('client/build'));
+    app.get('*', ()=> () =>{
+        res.sendFile(
+            path.join(__dir,'client','build','index.html')
+        );
+    });
+}
 
 
-app.listen(5000, ()=>console.log('Server up and running'));
+const Port = process.env.PORT || 5000
+app.listen(Port, ()=>console.log('Server up and running'));
 
