@@ -105,9 +105,9 @@ class Home extends Component {
                       
                 </form>
                 <br/>
-        <p className="text-danger font-weight-bold mb-2">{this.state.message}</p>
+        <p className="text-danger font-weight-bold font-italic mb-2">{this.state.message}</p>
         
-        <p> <span><a href={this.state.link} target="_blank" className="text-light nav-background">{this.state.link}</a></span></p>
+        <p style={{backgroundColor:"#08353b"}}> <span><a href={this.state.link} target="_blank" className="text-light">{this.state.link}</a></span></p>
                 </div>
                 </>
 

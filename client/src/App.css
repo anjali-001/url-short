@@ -40,5 +40,8 @@
       background-color: #08353b !important;
   }
 
+  td{
+      overflow: break-word !important;
+  }
 
 
