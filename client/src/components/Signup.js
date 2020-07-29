@@ -47,6 +47,12 @@ class Signup extends Component {
 
   render() {
     return (
+        <>
+        <nav className="navbar navbar-dark nav-background">
+               <h3 className="text-light">URL Shortener</h3>
+               {/* <p>Already registered? Sign in here</p> */}
+                <Link to="/signin"><a className="text-light font-weight-bold" href="#">Sign In</a></Link>
+           </nav>
       <div className="App-header text-center">
         <div>
           <h2
@@ -81,7 +87,7 @@ class Signup extends Component {
                 <b>Email:</b>
                 <input
                   name="email"
-                  type="text"
+                  type="email"
                   value={this.state.email}
                   placeholder="Email"
                   required
@@ -124,10 +130,12 @@ class Signup extends Component {
                 timeout={500000000} //3 secs
               />
             </div>
-            <p className="text-danger pt-2 font-italic">{this.state.error}</p>
+            
           </form>
+          <small className="text-danger pt-2 font-italic">{this.state.error}</small>
         </div>
       </div>
+      </>
     );
   }
 }

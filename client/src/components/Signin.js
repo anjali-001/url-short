@@ -12,18 +12,40 @@ class Signin extends Component {
       password: "",
       error: null,
       isLoading: false,
+      nameError:"",
+      emailError:""
     };
+  }
+
+  validate = () => {
+    let nameError = "";
+    let emailError = "";
+    if(!this.state.email.includes('@')){
+      emailError = "invalid email"
+    }
+
+    if(emailError){
+      this.setState({emailError});
+      return false;
+    }
+    return true;
   }
 
   handleChange = (e) => {
     this.setState({
       [e.target.name]: e.target.value,
+      emailError:"",
+      error:""
     });
   };
 
   handleSubmit = (e) => {
     e.preventDefault();
     this.setState({ isLoading: true });
+    const isValid = this.validate();
+    if(isValid){
+      console.log('this.state', this.state);
+    }
     axios
       .post("/api/user/signin", {
         email: this.state.email,
@@ -52,7 +74,7 @@ class Signin extends Component {
         <nav className="navbar navbar-dark nav-background">
           <h3 className="text-light">URL Shortener</h3>
           {/* <p>Not registered? Sign up here</p> */}
-          <Link to="/">
+          <Link to="/signup">
             <a className="text-light font-weight-bold" href="#">
               Sign Up
             </a>
@@ -67,7 +89,7 @@ class Signin extends Component {
               <b>Email:</b>
               <input
                 name="email"
-                type="email"
+                type=""
                 value={this.state.email}
                 placeholder="Email"
                 required
@@ -103,8 +125,10 @@ class Signin extends Component {
               timeout={500000000} //3 secs
             />
             </div>
-            <p className="text-danger pt-2 font-italic">{this.state.error}</p>
+            
           </form>
+          <small className="text-danger pt-2 font-italic">{this.state.emailError?this.state.emailError:(this.state.error?this.state.error:"")}</small>
+    
         </div>
         </div>
       </React.Fragment>

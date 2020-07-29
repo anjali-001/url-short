@@ -1,21 +1,14 @@
 import React from 'react'
-import Signup from './Signup'
-
 import {Link} from 'react-router-dom';
-import Signin from './Signin';
-
 function Landing() {
     return (
-        <>
-           <nav className="navbar navbar-dark nav-background">
-               <h3 className="text-light">URL Shortener</h3>
-               {/* <p>Already registered? Sign in here</p> */}
-                <Link to="/signin"><a className="text-light font-weight-bold" href="#">Sign In</a></Link>
-           </nav>
-           
-            <Signup/>
-            
-        </>
+          <div className="App-header">
+          <h2 className="px-4" style={{backgroundColor:"#08353b",color:"#ffffff",borderRadius:"5px"}}> Bits and <span style={{backgroundColor:"white",padding:"0 3px"}}>links</span></h2>
+
+            <Link to="/signup"><button className="btn btn-outline-secondary btn-style pr-5 pl-5 m-1">Sign Up</button></Link>
+            <Link to="/signin"><button className="btn btn-outline-secondary btn-style pr-5 pl-5 m-1">Sign In</button></Link>
+        </div>
+
     )
 }
 

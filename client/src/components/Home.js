@@ -71,21 +71,14 @@ class Home extends Component {
             <>
             <Navbar />
             <div className="App-header text-center">
-                {/* <nav className="navbar navbar-dark bg-dark">
-                   <h3 className="text-light">URL Shortener</h3>
-                    <button className="btn btn-light btn-outline-secondary" onClick={this.handleSignout}>Sign Out</button>
-                    <Link to="/list" ><button className="btn btn-light btn-outline-secondary">list</button></Link>
-
-               </nav> */}
-               
-                <h2 className="px-4" style={{backgroundColor:"#08353b",color:"#ffffff",borderRadius:"5px"}}>Shorten <span style={{backgroundColor:"white",padding:"0 3px"}}>URL</span></h2>
+                <h2 className="px-4" style={{backgroundColor:"#08353b",color:"#ffffff",borderRadius:"5px"}}>Shorten <span style={{backgroundColor:"white",padding:"0 3px"}}>Link</span></h2>
                 <form className="" onSubmit={this.handleSubmit}>
                         <div className="form-inline">
                         {/* <label><b>Enter Url :</b></label> */}
                         <input name="url" 
                                type="url" 
                                value={this.state.url}
-                               placeholder="URL to be shortened" 
+                               placeholder="Link to be shortened" 
                                required onChange={this.handleChange}
                                className="form-control text-center"/>
                         </div><br/>
@@ -94,7 +87,7 @@ class Home extends Component {
                         <input name="hash" 
                                type="hash" 
                                value={this.state.hash}
-                               placeholder="Preferred hash*" 
+                               placeholder="Preferred hash(optional)" 
                                onChange={this.handleChange}
                                className="form-control text-center"/>
                         </div>
