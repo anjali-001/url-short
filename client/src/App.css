@@ -1,7 +1,9 @@
 *{
     padding:0;
     margin:0;
-    font-family: 'Ubuntu', sans-serif;
+    font-family: 'Francois One', sans-serif;
+    font-family: 'Merriweather', serif;
+    color: #08353b;
 }
 
 .form-style{
@@ -13,7 +15,7 @@
     
 }
 .App-header {
-    background-color: #e6e6ff;
+    background-color: #ffffff;
     min-height: 100vh;
     display: flex;
     flex-direction: column;
@@ -22,10 +24,21 @@
     font-size: calc(7px + 2vmin);
     color: #000;
   }
+
+  /* original green #08353b */
   .nav-background{
-      background-color: #00004d;
+      background-color: #08353b;
+      box-shadow: 0 8px 6px -6px black;
   }
 
+  .btn-style{
+      color: #08353b !important;
+      border-color: #08353b !important;
+  }
+  .btn-style:hover{
+      color: #ffffff !important;
+      background-color: #08353b !important;
+  }
 
 
 

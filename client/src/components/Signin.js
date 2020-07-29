@@ -25,7 +25,7 @@ class Signin extends Component {
     e.preventDefault();
     this.setState({ isLoading: true });
     axios
-      .post("http://localhost:5000/api/user/signin", {
+      .post("/api/user/signin", {
         email: this.state.email,
         password: this.state.password,
       })
@@ -60,7 +60,7 @@ class Signin extends Component {
         </nav>
         <div className="App-header text-center">
         <div >
-          <h2 >Sign In</h2>
+          <h2 style={{backgroundColor:"#08353b",color:"#ffffff",borderRadius:"5px"}}>Sign <span style={{backgroundColor:"white",padding:"0 3px"}}>In</span></h2>
           <form  onSubmit={this.handleSubmit}>
               <div className="text-left">
             <label>
@@ -89,7 +89,7 @@ class Signin extends Component {
             </label><br /></div>
             <button
               type="submit"
-              className="btn btn-light btn-outline-secondary text-center"
+              className="btn btn-light btn-outline-secondary text-center btn-style"
             >
               Sign In
             </button>

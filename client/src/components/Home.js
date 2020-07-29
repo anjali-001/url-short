@@ -53,11 +53,18 @@ class Home extends Component {
         if(!getToken())
         return(
             <div>
-                 <nav className="navbar navbar-dark bg-dark">
-                   <h3 className="text-light">URL Shortener</h3>
-                    <Link to="/"><button className="btn btn-light btn-outline-secondary">Sign Up</button></Link>
-               </nav>
-               <h1>Please Login/Signup First</h1>
+                 <nav className="navbar navbar-dark nav-background">
+                    <h3 className="text-light">URL Shortener</h3>
+                    <div className="ml-auto">
+                    <Link to="/">
+                            <a className="text-light font-weight-bold pr-2" href="#"> SignUp</a>
+                    </Link>   
+                    <Link to="/signin">
+                            <a className="text-light font-weight-bold" href="#"> SignIn</a>
+                    </Link>  
+                    </div>          
+                  </nav>
+               <h1 className="App-header">Please Signin/Signup First</h1>
             </div>
         )
         return (
@@ -71,7 +78,7 @@ class Home extends Component {
 
                </nav> */}
                
-                <h2 className=" p-3 text-center">Shorten URL</h2>
+                <h2 className="px-4" style={{backgroundColor:"#08353b",color:"#ffffff",borderRadius:"5px"}}>Shorten <span style={{backgroundColor:"white",padding:"0 3px"}}>URL</span></h2>
                 <form className="" onSubmit={this.handleSubmit}>
                         <div className="form-inline">
                         {/* <label><b>Enter Url :</b></label> */}
@@ -93,7 +100,7 @@ class Home extends Component {
                         </div>
                         <br/>
                         <button type="submit" 
-                                className="btn btn-outline-dark">Shorten</button>
+                                className="btn btn-outline-dark btn-style">Shorten</button>
                         {/* <p className="text-danger pt-2 font-italic">{this.state.error}</p> */}
                       
                 </form>

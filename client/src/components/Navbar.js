@@ -5,7 +5,7 @@ import {removeUserSession} from '../utils/common'
 function Navbar(props) {
   return (
     <div>
-      <nav className="navbar navbar-expand-lg navbar-light nav-background">
+      <nav className="navbar navbar-expand-lg navbar-light nav-background sticky-top">
         <a className="navbar-brand text-light">
           URL Shortener
         </a>
@@ -33,7 +33,7 @@ function Navbar(props) {
             </a>
             </Link>
             <a className="nav-item nav-link text-light font-weight-bold" href="#" onClick={()=>{removeUserSession();props.history.push("/signin")}}>
-              Sign Out
+              Signout
             </a>
           </div>
         </div>
