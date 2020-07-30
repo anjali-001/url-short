@@ -38,11 +38,11 @@ class Home extends Component {
             if(res.data.message){
                 this.setState({
                     message:res.data.message,
-                    link: `http://localhost:5000/${res.data.url.hash}`
+                    link: `https://bitterlinks.herokuapp.com/${res.data.url.hash}`
                 })
             }else{
                 this.setState({
-                    link:`http://localhost:5000/${res.data.hash}`,message:""
+                    link:`https://bitterlinks.herokuapp.com/${res.data.hash}`,message:""
                 })
             }
         })
