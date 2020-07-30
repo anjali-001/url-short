@@ -38,7 +38,7 @@ app.get('/:hash',(req,res)=>{
     URL.findOne({hash:hashed},(err,doc)=>{
         if(doc){
             console.log(doc.url);
-            res.redirect(doc.url)
+            res.redirect('https://'+doc.url)
         }else{
             res.redirect('/')
         }
