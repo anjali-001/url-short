@@ -9,7 +9,6 @@ function Landing() {
             <Link to="/signup"><button className="btn btn-outline-secondary btn-style pr-5 pl-5 m-1">Sign Up</button></Link>
             <Link to="/signin"><button className="btn btn-outline-secondary btn-style pr-5 pl-5 m-1">Sign In</button></Link>
         </div>
-        <footer className="text-center fixed">Made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://www.github.com/anjali-001"target="_blank">Anjali</a></footer>
         </>
     )
 }

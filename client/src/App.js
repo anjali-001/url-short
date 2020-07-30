@@ -24,7 +24,8 @@ class App extends Component {
       <Route path='/list' exact component={List}/>
       </Switch>
       
-      
+      <footer className="text-center fixed">Made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://www.github.com/anjali-001"target="_blank">Anjali</a></footer>
+
     </div>
   )};
 }
