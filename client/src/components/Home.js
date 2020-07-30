@@ -76,7 +76,7 @@ class Home extends Component {
                         <div className="form-inline">
                         {/* <label><b>Enter Url :</b></label> */}
                         <input name="url" 
-                               type="url" 
+                               type="string" 
                                value={this.state.url}
                                placeholder="Link to be shortened" 
                                required onChange={this.handleChange}

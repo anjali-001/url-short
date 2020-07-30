@@ -33,11 +33,12 @@ app.use('/api/shorten', shorten);
 
 //redirect
 app.get('/:hash',(req,res)=>{
+    console.log(req.params)
     const hashed = req.params.hash;
     URL.findOne({hash:hashed},(err,doc)=>{
         if(doc){
             console.log(doc.url);
-            res.redirect('https://'+ doc.url)
+            res.redirect(doc.url)
         }else{
             res.redirect('/')
         }
