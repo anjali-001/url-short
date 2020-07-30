@@ -26,6 +26,7 @@
     justify-content: center;
     font-size: calc(7px + 2vmin);
     color: #000;
+    min-height: 94vh;
   }
 
   /* original green #08353b */
@@ -45,6 +46,9 @@
 
   p{
       overflow-wrap: break-word !important;
+  }
+  footer{
+      min-height: 6vh;
   }
 
 
