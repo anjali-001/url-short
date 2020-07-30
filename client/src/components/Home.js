@@ -54,7 +54,7 @@ class Home extends Component {
         return(
             <div>
                  <nav className="navbar navbar-dark nav-background">
-                    <h3 className="text-light">URL Shortener</h3>
+                    <h3 className="text-light">Bitter Links</h3>
                     <div className="ml-auto">
                     <Link to="/">
                             <a className="text-light font-weight-bold pr-2" href="#"> SignUp</a>

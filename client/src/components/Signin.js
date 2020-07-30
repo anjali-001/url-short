@@ -12,13 +12,11 @@ class Signin extends Component {
       password: "",
       error: null,
       isLoading: false,
-      nameError:"",
       emailError:""
     };
   }
 
   validate = () => {
-    let nameError = "";
     let emailError = "";
     if(!this.state.email.includes('@')){
       emailError = "invalid email"
@@ -72,7 +70,7 @@ class Signin extends Component {
     return (
       <React.Fragment>
         <nav className="navbar navbar-dark nav-background">
-          <h3 className="text-light">URL Shortener</h3>
+          <h3 className="text-light">Bitter links</h3>
           {/* <p>Not registered? Sign up here</p> */}
           <Link to="/signup">
             <a className="text-light font-weight-bold" href="#">
@@ -98,7 +96,7 @@ class Signin extends Component {
               />
             </label><br />
             <label>
-              <b>Password</b>
+              <b>Password:</b>
               <input
                 name="password"
                 type="password"

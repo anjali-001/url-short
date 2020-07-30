@@ -13,16 +13,42 @@ class Signup extends Component {
       password: "",
       error: "",
       isLoading: false,
+      nameError: "",
+      emailError:""
     };
   }
+validate = () => {
+  let nameError = "";
+  let emailError = "";
+  if(!this.state.email.includes('@')){
+      emailError = "invalid email";
+  }
+  if(!this.state.name){
+      nameError = "name cannot be blank";
+  }
+
+  if(emailError || nameError){
+    this.setState({emailError,nameError})
+    return false;
+  }
+    return true;
+}
 
   handleChange = (e) => {
     this.setState({
       [e.target.name]: e.target.value,
+      emailError: "",
+      nameError:"",
+      error:""
     });
   };
   handleSubmit = (e) => {
     e.preventDefault();
+    const isValid = this.validate()
+    if(!isValid){
+      return;
+      console.log('this.state', this.state);
+    }
     this.setState({ isLoading: true });
     axios
       .post("/api/user/signup", {
@@ -49,7 +75,7 @@ class Signup extends Component {
     return (
         <>
         <nav className="navbar navbar-dark nav-background">
-               <h3 className="text-light">URL Shortener</h3>
+               <h3 className="text-light">Bitter links</h3>
                {/* <p>Already registered? Sign in here</p> */}
                 <Link to="/signin"><a className="text-light font-weight-bold" href="#">Sign In</a></Link>
            </nav>
@@ -87,7 +113,7 @@ class Signup extends Component {
                 <b>Email:</b>
                 <input
                   name="email"
-                  type="email"
+                  type=""
                   value={this.state.email}
                   placeholder="Email"
                   required
@@ -132,7 +158,9 @@ class Signup extends Component {
             </div>
             
           </form>
-          <small className="text-danger pt-2 font-italic">{this.state.error}</small>
+          <small className="text-danger pt-2 font-italic">
+            {this.state.nameError?this.state.nameError:(this.state.emailError?this.state.emailError:(this.state.error?this.state.error:""))}
+          </small>
         </div>
       </div>
       </>

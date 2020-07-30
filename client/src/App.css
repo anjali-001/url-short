@@ -5,7 +5,10 @@
     font-family: 'Merriweather', serif;
     color: #08353b;
 }
-
+.list-group-item{
+    background-color: #08353b !important;
+    border: solid 2px white !important;
+}
 .form-style{
     min-height: 91.2vh;
     display: flex;

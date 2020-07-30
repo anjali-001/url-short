@@ -7,7 +7,7 @@ function Navbar(props) {
     <div>
       <nav className="navbar navbar-expand-lg navbar-light nav-background sticky-top">
         <a className="navbar-brand text-light">
-          URL Shortener
+          Bitter links
         </a>
         <button
           className="navbar-toggler"
