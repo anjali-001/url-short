@@ -78,7 +78,7 @@ class Home extends Component {
                         <input name="url" 
                                type="string" 
                                value={this.state.url}
-                               placeholder="Link to be shortened" 
+                               placeholder="Link without https://" 
                                required onChange={this.handleChange}
                                className="form-control text-center"/>
                         </div><br/>
