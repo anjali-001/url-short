@@ -87,7 +87,7 @@ class Home extends Component {
                         <input name="hash" 
                                type="hash" 
                                value={this.state.hash}
-                               placeholder="Preferred hash(optional)" 
+                               placeholder="Preferred name(optional)" 
                                onChange={this.handleChange}
                                className="form-control text-center"/>
                         </div>

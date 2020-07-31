@@ -11,6 +11,7 @@ import Home from './components/Home';
 import Signin from './components/Signin';
 import Signup from './components/Signup';
 import List from './components/List';
+import Guide from './components/Guide';
 
 class App extends Component {
   render(){
@@ -22,6 +23,7 @@ class App extends Component {
       <Route path='/signin' exact component={Signin}/>
       <Route path='/signup' exact component={Signup}/>
       <Route path='/list' exact component={List}/>
+      <Route path='/guide' exact component={Guide}/>
       </Switch>
       
       <footer className="text-center fixed">Made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://www.github.com/anjali-001"target="_blank">Anjali</a></footer>

@@ -27,6 +27,11 @@ function Navbar(props) {
               Home <span className="sr-only">(current)</span>
             </a>
             </Link>
+            <Link to='/guide'>
+            <a className="nav-item nav-link text-light">
+              Guide
+            </a>
+            </Link>
             <Link to='/list'>
             <a className="nav-item nav-link text-light">
               List
