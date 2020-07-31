@@ -19,14 +19,13 @@
 }
 .App-header {
     background-color: #ffffff;
-    min-height: 100vh;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     font-size: calc(7px + 2vmin);
     color: #000;
-    min-height: 94vh;
+    min-height: 84.5vh;
   }
 
   /* original green #08353b */
@@ -48,7 +47,7 @@
       overflow-wrap: break-word !important;
   }
   footer{
-      min-height: 6vh;
+      min-height: 5.5vh;
   }
 
 
