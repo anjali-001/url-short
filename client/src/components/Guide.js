@@ -6,7 +6,8 @@ export default class Info extends Component {
     return (
         <>
     <Navbar/>
-      <div className="container mt-5">
+      <div className=".
+      container mt-5">
       <div className="card text-center">
         <div className="card-header" style={{backgroundColor:"#08353b", color:"white"}}>Information</div>
         <div className="card-body">
