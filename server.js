@@ -3,6 +3,7 @@ const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
 const dotenv = require('dotenv');
 const cors = require('cors');
+const compression = require('compression');
 const path = require('path');
 const URL = require('./models/Url');
 //AuthRoutes
@@ -15,6 +16,7 @@ const shorten = require('./routes/shorten');
 
 const app = express();
 
+app.use(compression());
 app.use(cors());
 
 //connect to DB
