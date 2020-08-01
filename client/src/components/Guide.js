@@ -19,6 +19,7 @@ export default class Info extends Component {
               <li className="m-2">Step 1: Paste the link you want to shorten in the box where you find "Link without https://". Make sure your link does not have https://  in it. We'll deal with that for you.</li>
               <li className="m-2">Step 2: Put a name of your choice in the box where it's written "Preferred name." If you give it a name then your link will have that name if it is be available, if you don't want to enter any name and just want to shorten the link because you think customzation is mainstream, that's cool too. No judegments there, we've got you covered.</li>
               <li className="m-2">Step 3: Click the button "Shorten" and VIOLA, you've got a shortenend link(with or without a custom name) for free.</li>
+              <li className="m-2">Step 4: Not really a step, however just in case you want to see the old links you have shortened then find it under List with a delete functionality as well.</li>
           </ul>
         </div>
         <small className="card-footer" style={{backgroundColor:"#08353b", color:"white"}}>Who likes long links, right? Shorten it.</small>
