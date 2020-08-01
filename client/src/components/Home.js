@@ -1,6 +1,5 @@
 import React,{Component} from 'react';
 import {Link} from 'react-router-dom';
-import {removeUserSession} from '../utils/common';
 import axios from 'axios';
 import {getToken } from '../utils/common'
 import Navbar from './Navbar'
@@ -16,10 +15,6 @@ class Home extends Component {
         })
     }
 
-    // handleSignout = () => {
-    //     removeUserSession();
-    //     this.props.history.push('/signin')
-    // }
 
     handleChange = (e) => {
         this.setState({
@@ -34,7 +29,6 @@ class Home extends Component {
             hash:this.state.hash
         },{headers:{'auth-token':getToken()}})
         .then(res => {
-            console.log(res)
             if(res.data.message){
                 this.setState({
                     message:res.data.message,

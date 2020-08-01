@@ -47,7 +47,6 @@ validate = () => {
     const isValid = this.validate()
     if(!isValid){
       return;
-      console.log('this.state', this.state);
     }
     this.setState({ isLoading: true });
     axios
@@ -57,7 +56,6 @@ validate = () => {
         password: this.state.password,
       })
       .then((res) => {
-        console.log(res);
         this.setState({ isLoading: false });
         if (res.data.error) {
           this.setState({

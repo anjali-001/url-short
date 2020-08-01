@@ -14,7 +14,6 @@ export class List extends Component {
   }
 
   handleDelete = (id) => {
-    console.log('id', id)
     axios.post("/api/shorten/delete",{id:id},{
         headers: { "auth-token": getToken() }    })
     .then(res=>{console.log('res', res)

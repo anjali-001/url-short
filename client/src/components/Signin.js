@@ -50,7 +50,6 @@ class Signin extends Component {
         password: this.state.password,
       })
       .then((res) => {
-        console.log(res);
         this.setState({isLoading: false})
         if (res.data.error != null) {
           this.setState({
