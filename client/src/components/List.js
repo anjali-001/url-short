@@ -12,7 +12,20 @@ export class List extends Component {
       list: [],
     };
   }
+
+  handleDelete = (id) => {
+    console.log('id', id)
+    axios.post("/api/shorten/delete",{id:id},{
+        headers: { "auth-token": getToken() }    })
+    .then(res=>{console.log('res', res)
+    this.handleDetails()})
+    .catch(err=>console.log('err', err));
+  }
+
   componentDidMount() {
+    this.handleDetails();
+  }
+  handleDetails=()=>{
     axios
       .get("/api/shorten/list", {
         headers: { "auth-token": getToken() },
@@ -28,10 +41,10 @@ export class List extends Component {
     return (
       <React.Fragment>
         <Navbar />
-        <div className="p-3 container">
+        <div className="p-3 container App-header-list">
           <ul className="list-group" >
             {this.state.list.map((item) => {
-              return <ListItem key={item.id} url={item.url} hash={item.hash} />;
+              return <ListItem key={item.id} url={item.url} _id={item.id} hash={item.hash} onDelete={this.handleDelete}/>;
             })}
           </ul>{" "}
 

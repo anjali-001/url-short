@@ -25,8 +25,9 @@ mongoose.connect(process.env.MONGO_URI || process.env.DB_CONNECT)
 .then(()=>console.log('Mongodb connected'))
 .catch(err=>console.log('Error:', err))
 //Middleware
-app.use(bodyParser.urlencoded({extended:false}))
 app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({extended:false}))
+
 app.use('/api/user',authRoute);
 app.use('/api/dummy',dummy);
 

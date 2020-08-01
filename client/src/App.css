@@ -27,6 +27,8 @@
     color: #000;
     min-height: 84.5vh;
   }
+
+  /* indentation landing */
   .App-header-landing {
     background-color: #ffffff;
     display: flex;
@@ -36,6 +38,16 @@
     font-size: calc(7px + 2vmin);
     color: #000;
     min-height: 94.5vh;
+  }
+
+  /* indentation list */
+  .App-header-list {
+    min-height: 85vh;
+  }
+
+  /* indentation guide */
+  .App-header-guide{
+      min-height: 76.7vh;
   }
 
   /* original green #08353b */
@@ -56,6 +68,13 @@
   p{
       overflow-wrap: break-word !important;
   }
+
+  /* List Item button */
+  .trash:hover .can{ 
+    color: #08353b!important;
+  }
+
+
   footer{
       min-height: 5.5vh;
   }

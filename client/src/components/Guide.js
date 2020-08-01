@@ -6,7 +6,7 @@ export default class Info extends Component {
     return (
         <>
     <Navbar/>
-      <div className=".
+      <div className=" App-header-guide
       container mt-5">
       <div className="card text-center">
         <div className="card-header" style={{backgroundColor:"#08353b", color:"white"}}>Information</div>
@@ -21,7 +21,7 @@ export default class Info extends Component {
               <li className="m-2">Step 3: Click the button "Shorten" and VIOLA, you've got a shortenend link(with or without a custom name) for free.</li>
           </ul>
         </div>
-        <div className="card-footer" style={{backgroundColor:"#08353b", color:"white"}}>Long urls are kinda bitter, right? Shorten it.</div>
+        <small className="card-footer" style={{backgroundColor:"#08353b", color:"white"}}>Who likes long links, right? Shorten it.</small>
       </div>
       </div>  
       </>

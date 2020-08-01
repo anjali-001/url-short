@@ -3,7 +3,7 @@ const URL = require('../models/Url');
 const uniqid = require('uniqid');
 const verify = require('./verifyToken');
 const User = require('../models/User');
-
+const mongoose = require('mongoose')
 
 // router.get('/',(req,res)=>{
 //     res.json({msg:'API is working'});
@@ -51,11 +51,13 @@ router.get('/list', verify, (req,res)=>{
 })
 
 
-router.delete('/delete',verify,(req,res)=>{
-    URL.findByIdAndRemove({_id:req.body._id})
+router.post('/delete', verify,(req,res)=>{
+    console.log('req.body._id', req.body.id)
+    URL.findByIdAndRemove({_id:req.body.id})
     .then((resp)=>{
        if(resp){
            res.status(200).send(resp.url+' deleted')
+           console.log('Url', resp.url)
        } 
        else {
             res.send('URL not found');

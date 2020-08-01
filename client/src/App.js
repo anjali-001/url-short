@@ -26,7 +26,7 @@ class App extends Component {
       <Route path='/guide' exact component={Guide}/>
       </Switch>
       
-      <footer className="text-center fixed">Made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://www.github.com/anjali-001"target="_blank">Anjali</a></footer>
+      <footer className="text-center fixed">Made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://www.github.com/anjali-001">Anjali</a></footer>
 
     </div>
   )};

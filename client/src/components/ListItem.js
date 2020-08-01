@@ -2,10 +2,15 @@ import React from "react";
 
 function ListItem(props) {
   return (
-    <li className="list-group-item" >
-      <p className="text-light">url-{props.url}</p>
+    <li className="list-group-item">
+      <div className="row p-2">
+        
+      <p className="text-light pl-2">Link : {props.url}</p>
+      <button className="ml-auto btn btn-outline-light  trash"><i className="can text-light fa fa-trash-o" style={{fontSize:"18px"}} aria-hidden="true" onClick={()=>props.onDelete(props._id)}></i></button>
+      </div>
+      
       <a href={`https://bitterlinks.herokuapp.com/${props.hash}`} target="_blank">
-        <p className="text-light">{`https://bitterlinks.herokuapp.com/${props.hash}`}</p>
+        <p className="text-light">Shortened Link : {`https://bitterlinks.herokuapp.com/${props.hash}`}</p>
       </a>
     </li>
   );
