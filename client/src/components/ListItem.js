@@ -6,7 +6,7 @@ function ListItem(props) {
       <div className="row p-2">
         
       <p className="text-light pl-2">Link : {props.url}</p>
-      <button className="ml-auto btn btn-outline-light  trash"><i className="can text-light fa fa-trash-o" style={{fontSize:"18px"}} aria-hidden="true" onClick={()=>props.onDelete(props._id)}></i></button>
+      <button className="ml-auto btn btn-outline-light  trash" onClick={()=>props.onDelete(props._id)}><i className="can text-light fa fa-trash-o" style={{fontSize:"18px"}} aria-hidden="true"></i></button>
       </div>
       
       <a href={`https://bitterlinks.herokuapp.com/${props.hash}`} target="_blank">
