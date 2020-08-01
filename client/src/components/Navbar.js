@@ -5,7 +5,7 @@ import {removeUserSession} from '../utils/common'
 function Navbar(props) {
   return (
     <div>
-      <nav className="navbar navbar-expand-lg navbar-light nav-background sticky-top">
+      <nav className="navbar navbar-expand-lg navbar-dark nav-background sticky-top">
         <a className="navbar-brand text-light">
           Bitter links
         </a>
