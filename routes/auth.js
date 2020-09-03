@@ -26,6 +26,39 @@ router.post('/signup', (req,res)=>{
     })
     
 })
+// router.post('/signup', (req,res)=>{
+//     User.findOne({email:req.body.email})
+//        .then((doc)=>{
+//         if(doc)
+//         return res.send({error:'Email already exists! Sign in instead.',user:null,token:null});
+        
+//         //Hash Passwords
+//         bcrypt.genSalt(10)
+//         .then(salt=>{bcrypt.hash(req.body.password,salt)
+//         .then(hashedPassword => {
+//         const user = new User({
+//             name:req.body.name,
+//             email:req.body.email,
+//             password:hashedPassword
+//         })
+//     })
+//     })
+//     .catch(err=>{
+//         console.log('err', err)
+//     })
+//         user.save()
+//         .then((resp)=>{
+//             const token = jwt.sign({_id: resp._id}, process.env.TOKEN_SECRET)
+//             console.log(resp);
+//             res.send({user:resp,token:token,error:null})
+//         })
+//         .catch((err)=>{
+//             res.status(400).send(err)
+//         })
+//     })
+// })
+               
+        
 router.post('/signin',(req,res)=>{
     User.findOne({email:req.body.email},async (err,doc)=>{
         console.log('doc', doc)
