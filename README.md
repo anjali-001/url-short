@@ -14,7 +14,7 @@
 
  	`DB_CONNECT=mongodb+srv://[Your mongoDB cluster URL]`
  
- 	`TOKEN_SECRET=[Your token secret]`
+ 	`TOKEN_SECRET=[Value you want to encrypt with]`
  
  - Start Development Server:
  
