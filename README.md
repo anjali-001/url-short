@@ -8,6 +8,11 @@
  - Download the project folder with git or as a .zip file and extract the contents.
  - Install the dependencies:
  `npm install`
+ - Create an env file:
+
+ `	DB_CONNECT=mongodb+srv://[your mongoDB Cluster URL]`
+ 
+	`TOKEN_SECRET=[Your token secret]`
  
  - Start Development Server:
 	`npm run dev`
