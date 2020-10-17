@@ -6,7 +6,7 @@
 ## Getting Started
 
  - Download the project folder with git or as a .zip file and extract the contents.
- - Install the dependencies:
+ - Install dependencies:
  
  	`npm install && npm install --prefix  client`
  
