@@ -8,7 +8,7 @@
  - Download the project folder with git or as a .zip file and extract the contents.
  - Install the dependencies:
  
- 	`npm install`
+ 	`npm install && npm install --prefix  client`
  
  - Create an .env file and provide the following:
 
