@@ -21,6 +21,18 @@ app.use(cors());
 
 //connect to DB
 dotenv.config();
+
+if (process.env.NODE_ENV === "production") {
+    app.use(express.static("build"));
+    app.use((req, res, next) => {
+      if (req.header("x-forwarded-proto") !== "https") {
+        res.redirect(`https://${req.header("host")}${req.url}`);
+      } else {
+        next();
+      }
+    });
+}
+
 mongoose.connect(process.env.MONGO_URI || process.env.DB_CONNECT, {useNewUrlParser: true, useUnifiedTopology: true })
 .then(()=>console.log('Mongodb connected'))
 .catch(err=>console.log('Error:', err))
