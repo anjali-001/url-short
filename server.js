@@ -21,7 +21,7 @@ app.use(cors());
 
 //connect to DB
 dotenv.config();
-mongoose.connect(process.env.MONGO_URI || process.env.DB_CONNECT)
+mongoose.connect(process.env.MONGO_URI || process.env.DB_CONNECT, {useNewUrlParser: true, useUnifiedTopology: true })
 .then(()=>console.log('Mongodb connected'))
 .catch(err=>console.log('Error:', err))
 //Middleware
