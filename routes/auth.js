@@ -3,6 +3,8 @@ const User = require("../models/User");
 const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
 const e = require("express");
+const verify = require('./verifyToken');
+
 
 router.post("/signup", (req, res) => {
   User.findOne({ email: req.body.email }, async (error, doc) => {
@@ -88,5 +90,16 @@ router.post("/signin", (req, res) => {
       .send({ error: null, user: doc, token: token }); //user data error null
   });
 });
+
+
+router.post('/delete-user', (req,res) => {
+  User.findOneAndDelete({ email:req.body.email }, (err, doc) => {
+    if (doc) {
+      return res.status(200).send(doc);
+    } else {
+      console.log("No such user present");
+    }
+  });
+})
 
 module.exports = router;

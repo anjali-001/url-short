@@ -72,5 +72,5 @@ if(process.env.NODE_ENV === 'production'){
 
 
 const Port = process.env.PORT || 5000
-app.listen(Port, ()=>console.log('Server up and running'));
+module.exports = app.listen(Port, ()=>console.log('Server up and running'));
 
